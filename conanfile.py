@@ -14,7 +14,7 @@ class GeosConan(ConanFile):
 	    "fPIC": [True, False]
     }
     default_options = {
-        "shared": False,
+        "shared": True,
         "fPIC": True
     }
     #generators = "cmake"
@@ -32,6 +32,7 @@ class GeosConan(ConanFile):
     def build(self):
         cmake = CMake(self)
         cmake.definitions["GEOS_ENABLE_TESTS"] = False
+        cmake.configure(source_folder=self._source_subfolder)
         cmake.build()
         cmake.install()
 
@@ -39,5 +40,5 @@ class GeosConan(ConanFile):
         pass
 
     def package_info(self):
-        self.cpp_info.libs = ["geos"]
+        self.cpp_info.libs = ["geos", "geos_c"]
 

@@ -4,7 +4,7 @@ import os
 
 class GeosConan(ConanFile):
     name = "geos"
-    version = "3.8.0"
+    version = "3.7.3"
     license = "LGPL-2.1"
     url = "https://trac.osgeo.org/geos"
     description = "GEOS (Geometry Engine - Open Source) is a C++ port of the ​JTS Topology Suite (JTS). It aims to contain the complete functionality of JTS in C++. This includes all the ​OpenGIS Simple Features for SQL spatial predicate functions and spatial operators, as well as specific JTS enhanced functions."
